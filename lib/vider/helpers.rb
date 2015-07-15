@@ -10,10 +10,11 @@ module ViderVideoTag
     autoplay      = options[:autoplay] || true
     position      = options[:position] || "50% 50%"
     poster_type   = options[:poster_type] || "detect"
+    div_position  = options[:div_position] || "relative"
 
     video_options = "volume: #{volume}, playback_rate: #{playback_rate}, muted: #{muted}, loop: #{looping}, autoplay: #{autoplay}, position: #{position}, poster_type: #{poster_type}" || 'loop: false, muted: false, position: 0% 0%'
 
-    content_tag :div, '', id: 'vider-element', style: "width: #{width}; height: #{height};", data: { vide_bg: bg, vide_options: video_options }
+    content_tag :div, '', id: 'vider-element', style: "position: #{div_position}; width: #{width}; height: #{height};", data: { vide_bg: bg, vide_options: video_options }
   end
 
   # A view helper for adding a video background to an existing element
